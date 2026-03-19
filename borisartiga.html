@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boris Artiga — Houston, TX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0d1b2e;
+  --navy-mid:#142540;
+  --navy-light:#1e3557;
+  --blue:#1a56db;
+  --white:#ffffff;
+  --text:#e2eaf6;
+  --muted:#7a94b8;
+  --border:rgba(255,255,255,0.07);
+  --border-blue:rgba(26,86,219,0.35);
+}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--text);font-family:'Open Sans',sans-serif;font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+
+header{background:var(--navy);border-bottom:1px solid var(--border);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;gap:20px;position:sticky;top:0;z-index:100}
+.logo img{height:44px;width:auto;display:block}
+.header-right{display:flex;align-items:center;gap:24px}
+.header-phone{font-size:14px;color:var(--muted);transition:color 0.15s}
+.header-phone:hover{color:var(--white)}
+.btn-blue{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:var(--white);font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;padding:10px 22px;border-radius:6px;transition:opacity 0.15s;white-space:nowrap}
+.btn-blue:hover{opacity:0.88}
+
+/* HERO */
+.hero{padding:100px 48px 90px;text-align:center;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(26,86,219,0.15) 0%,transparent 70%);pointer-events:none}
+.hero-inner{position:relative;z-index:2;max-width:640px;margin:0 auto}
+.hero-location{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:24px}
+.hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(32px,5vw,52px);font-weight:800;line-height:1.12;letter-spacing:-0.02em;color:var(--white);margin-bottom:20px}
+.hero h1 span{color:#60a5fa}
+.hero-sub{font-size:16px;color:var(--muted);max-width:480px;margin:0 auto 36px;line-height:1.75}
+.hero-btns{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;color:var(--muted);font-size:13px;font-weight:500;padding:10px 22px;border:1px solid var(--border);border-radius:6px;transition:color 0.15s,border-color 0.15s}
+.btn-ghost:hover{color:var(--white);border-color:rgba(255,255,255,0.2)}
+
+/* SERVICES */
+.services-section{padding:80px 48px;border-bottom:1px solid var(--border)}
+.services-inner{max-width:860px;margin:0 auto}
+.section-label{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:40px;display:flex;align-items:center;gap:14px}
+.section-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.service-rows{display:flex;flex-direction:column}
+.service-row{display:grid;grid-template-columns:40px 1fr auto;align-items:center;gap:24px;padding:22px 0;border-bottom:1px solid var(--border)}
+.service-row:last-child{border-bottom:none}
+.service-num{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;color:var(--muted);letter-spacing:0.1em}
+.service-info{}
+.service-title{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:4px}
+.service-desc{font-size:13px;color:var(--muted);line-height:1.5}
+.service-arrow{color:var(--border-blue);font-size:18px;transition:color 0.15s,transform 0.15s}
+.service-row:hover .service-arrow{color:#60a5fa;transform:translateX(3px)}
+
+/* CONTACT */
+.contact-section{padding:80px 48px;border-bottom:1px solid var(--border);background:var(--navy-mid)}
+.contact-inner{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+@media(max-width:700px){.contact-inner{grid-template-columns:1fr;gap:40px}}
+.contact-heading{font-family:'Montserrat',sans-serif;font-size:clamp(24px,3.5vw,36px);font-weight:800;color:var(--white);line-height:1.2;letter-spacing:-0.02em;margin-bottom:14px}
+.contact-sub{font-size:15px;color:var(--muted);line-height:1.7}
+.contact-items{display:flex;flex-direction:column;gap:16px}
+.contact-item{display:flex;flex-direction:column;gap:3px;padding:16px 20px;border:1px solid var(--border);border-radius:8px;transition:border-color 0.2s}
+.contact-item:hover{border-color:var(--border-blue)}
+.contact-item-label{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted)}
+.contact-item-value{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;color:var(--white);transition:color 0.15s}
+.contact-item:hover .contact-item-value{color:#60a5fa}
+
+footer{background:#080d16;padding:24px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid var(--border)}
+.footer-logo img{height:28px;width:auto;display:block}
+.footer-right{font-size:12px;color:rgba(255,255,255,0.2)}
+
+@media(max-width:600px){header{padding:16px 20px}.hero,.services-section,.contact-section{padding:60px 20px}footer{padding:20px}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.hero-inner{animation:fadeUp 0.5s ease both 0.1s}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="https://borisartiga.com" target="_blank" class="logo">
+    <img src="https://borisartiga.com/wp-content/uploads/2024/08/boris-artiga-logo-6-W.png" alt="Boris Artiga">
+  </a>
+  <div class="header-right">
+    <a href="tel:7136359220" class="header-phone">(713) 635-9220</a>
+    <a href="https://borisartiga.com/contact/" target="_blank" class="btn-blue">Get in Touch</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-location">Houston, Texas</div>
+    <h1>Ideas Meet Execution.<br><span>Real Projects, Real Impact.</span></h1>
+    <p class="hero-sub">Real estate, land development, project management, and web development — all under one roof.</p>
+    <div class="hero-btns">
+      <a href="https://borisartiga.com/contact/" target="_blank" class="btn-blue">Get Started</a>
+      <a href="https://borisartiga.com/about/" target="_blank" class="btn-ghost">About Me</a>
+    </div>
+  </div>
+</section>
+
+<section class="services-section">
+  <div class="services-inner">
+    <div class="section-label">What I Do</div>
+    <div class="service-rows">
+      <a href="https://borisartiga.com/real-estate-services/" target="_blank" class="service-row">
+        <span class="service-num">01</span>
+        <div class="service-info">
+          <div class="service-title">Real Estate</div>
+          <div class="service-desc">Commercial acquisitions, leasing, investments, and brokerage across Texas.</div>
+        </div>
+        <span class="service-arrow">→</span>
+      </a>
+      <a href="https://borisartiga.com/land-development/" target="_blank" class="service-row">
+        <span class="service-num">02</span>
+        <div class="service-info">
+          <div class="service-title">Land Development</div>
+          <div class="service-desc">Site acquisition, zoning, entitlements, and development from concept to completion.</div>
+        </div>
+        <span class="service-arrow">→</span>
+      </a>
+      <a href="https://borisartiga.com/project-management/" target="_blank" class="service-row">
+        <span class="service-num">03</span>
+        <div class="service-info">
+          <div class="service-title">Project Management</div>
+          <div class="service-desc">End-to-end oversight for construction, renovation, and development projects.</div>
+        </div>
+        <span class="service-arrow">→</span>
+      </a>
+      <a href="https://borisartiga.com/web-development/" target="_blank" class="service-row">
+        <span class="service-num">04</span>
+        <div class="service-info">
+          <div class="service-title">Web Development</div>
+          <div class="service-desc">Custom builds, automation systems, AI tools, and full stack development.</div>
+        </div>
+        <span class="service-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="contact-inner">
+    <div>
+      <div class="contact-heading">Let's connect.</div>
+      <p class="contact-sub">Reach out directly — whether it's a real estate deal, a development project, or a tech build.</p>
+    </div>
+    <div class="contact-items">
+      <a href="tel:7136359220" class="contact-item">
+        <span class="contact-item-label">Call or Text</span>
+        <span class="contact-item-value">(713) 635-9220</span>
+      </a>
+      <a href="https://borisartiga.com/send-a-message/" target="_blank" class="contact-item">
+        <span class="contact-item-label">Send a Message</span>
+        <span class="contact-item-value">borisartiga.com/send-a-message</span>
+      </a>
+      <a href="https://borisartiga.com" target="_blank" class="contact-item">
+        <span class="contact-item-label">Website</span>
+        <span class="contact-item-value">borisartiga.com</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="https://borisartiga.com" target="_blank" class="footer-logo">
+    <img src="https://borisartiga.com/wp-content/uploads/2024/08/boris-artiga-logo-6-W.png" alt="Boris Artiga">
+  </a>
+  <div class="footer-right">© 2026 Boris Artiga</div>
+</footer>
+
+</body>
+</html>
